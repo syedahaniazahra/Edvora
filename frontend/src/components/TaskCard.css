@@ -1,0 +1,146 @@
+.task-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.task-card.editing {
+  border: 2px solid #667eea;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.task-header h3 {
+  color: #2d3748;
+  margin: 0;
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #a0aec0;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.icon-btn:hover {
+  color: #667eea;
+  background: #f7fafc;
+}
+
+.icon-btn.delete:hover {
+  color: #fc8181;
+}
+
+.task-description {
+  color: #718096;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.task-details {
+  background: #f7fafc;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.task-detail {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.task-detail:last-child {
+  margin-bottom: 0;
+}
+
+.detail-label {
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.detail-value {
+  color: #2d3748;
+}
+
+.task-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.task-priority {
+  padding: 4px 12px;
+  border-radius: 20px;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.task-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.task-status.pending {
+  color: #ed8936;
+}
+
+.task-status.completed {
+  color: #38a169;
+}
+
+.status-toggle {
+  background: none;
+  border: none;
+  color: #667eea;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.status-toggle:hover {
+  text-decoration: underline;
+}
+
+.edit-input,
+.edit-textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}

@@ -1,0 +1,146 @@
+.skills-page {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.skills-header {
+  margin-bottom: 30px;
+}
+
+.skills-header h1 {
+  color: #2d3748;
+  margin-bottom: 10px;
+}
+
+.skills-header p {
+  color: #718096;
+}
+
+.category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.category-btn {
+  padding: 8px 16px;
+  background: #f7fafc;
+  border: none;
+  border-radius: 20px;
+  color: #4a5568;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+  background: #e2e8f0;
+}
+
+.category-btn.active {
+  background: #667eea;
+  color: white;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #718096;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.skill-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.skill-category {
+  background: #e9d8fd;
+  color: #553c9a;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.skill-icon {
+  color: #667eea;
+  font-size: 24px;
+}
+
+.skill-content h3 {
+  color: #2d3748;
+  margin-bottom: 10px;
+}
+
+.skill-content p {
+  color: #718096;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.skill-resources h4 {
+  color: #4a5568;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.skill-resources ul {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.skill-resources li {
+  margin-bottom: 8px;
+}
+
+.resource-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #667eea;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.resource-link:hover {
+  text-decoration: underline;
+}
+
+.start-learning {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .category-filter {
+    justify-content: center;
+  }
+}
