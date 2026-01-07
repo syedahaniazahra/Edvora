@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'r
 import axios from 'axios'
 import './App.css'
 
-// Set axios base URL from Vite env; fallback to localhost for safety
-axios.defaults.baseURL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+// Set axios base URL from Vite env
+axios.defaults.baseURL = import.meta.env.VITE_API_URL
 
 // Pages
 import Login from './pages/Login'
