@@ -48,7 +48,7 @@ const Dashboard = () => {
   const fetchDashboardData = async (token) => {
     try {
       // Fetch stats
-      const statsResponse = await fetch('http://localhost:5000/api/stats', {
+      const statsResponse = await fetch(`${import.meta.env.VITE_API_URL}/api/stats`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -63,7 +63,7 @@ const Dashboard = () => {
       }
 
       // Fetch tasks
-      const tasksResponse = await fetch('http://localhost:5000/api/tasks', {
+      const tasksResponse = await fetch(`${import.meta.env.VITE_API_URL}/api/tasks`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -91,7 +91,7 @@ const Dashboard = () => {
       }
 
       // Fetch motivational quote
-      const quoteResponse = await fetch('http://localhost:5000/api/quote');
+      const quoteResponse = await fetch(`${import.meta.env.VITE_API_URL}/api/quote`);
       if (quoteResponse.ok) {
         const quoteData = await quoteResponse.json();
         setQuote(quoteData.quote || quoteData.message || 'Stay focused and keep learning!');
@@ -337,11 +337,11 @@ const Dashboard = () => {
             <button 
               className="refresh-quote"
               onClick={() => {
-                fetch('http://localhost:5000/api/quote')
-                  .then(res => res.json())
-                  .then(data => setQuote(data.quote || data.message))
-                  .catch(() => setQuote('Stay focused and keep learning!'));
-              }}
+                  fetch(`${import.meta.env.VITE_API_URL}/api/quote`)
+                    .then(res => res.json())
+                    .then(data => setQuote(data.quote || data.message))
+                    .catch(() => setQuote('Stay focused and keep learning!'));
+                }}
             >
               Refresh Quote 🔄
             </button>

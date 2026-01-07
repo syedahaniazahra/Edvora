@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'r
 import axios from 'axios'
 import './App.css'
 
+// Set axios base URL from Vite env; fallback to localhost for safety
+axios.defaults.baseURL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+
 // Pages
 import Login from './pages/Login'
 import Register from './pages/Register'
@@ -51,8 +54,8 @@ const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      // Use full URL to be safe: http://localhost:5000/api/auth/login
-      const response = await axios.post('http://localhost:5000/api/auth/login', { email, password })
+      // Use relative path — axios.baseURL will prefix it from env
+      const response = await axios.post('/api/auth/login', { email, password })
       const { token, user } = response.data
       
       localStorage.setItem('token', token)

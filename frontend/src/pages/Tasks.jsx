@@ -82,7 +82,7 @@ const Tasks = () => {
 
   const fetchTasks = async () => {
     const token = localStorage.getItem('token');
-    const response = await fetch('http://localhost:5000/api/tasks', {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/tasks`, {
       headers: {
         'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json'
@@ -116,7 +116,7 @@ const Tasks = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:5000/api/tasks', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/tasks`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -152,7 +152,7 @@ const Tasks = () => {
     };
 
     try {
-      const response = await fetch(`http://localhost:5000/api/tasks/${editingTask.id || editingTask._id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/tasks/${editingTask.id || editingTask._id}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -185,7 +185,7 @@ const Tasks = () => {
     const token = localStorage.getItem('token');
     
     try {
-      const response = await fetch(`http://localhost:5000/api/tasks/${taskId}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/tasks/${taskId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -215,7 +215,7 @@ const Tasks = () => {
     };
 
     try {
-      const response = await fetch(`http://localhost:5000/api/tasks/${task.id || task._id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/tasks/${task.id || task._id}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,

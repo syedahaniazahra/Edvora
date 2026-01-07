@@ -35,10 +35,8 @@ const Register = () => {
     }
 
     try {
-      // Ensure axios is pointing to the correct port if not proxied
-      // If you have a proxy set up in package.json, '/api/...' is fine.
-      // Otherwise, use 'http://localhost:5000/api/auth/register'
-      const response = await axios.post('http://localhost:5000/api/auth/register', formData)
+      // Use relative path — axios.baseURL will prefix it from env or fallback
+      const response = await axios.post('/api/auth/register', formData)
       
       localStorage.setItem('token', response.data.token)
       localStorage.setItem('user', JSON.stringify(response.data.user))
