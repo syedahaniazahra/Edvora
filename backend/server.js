@@ -10,10 +10,16 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors({
-  origin: 'http://localhost:3000',
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000", // local dev
+      "https://edvora-five-omega.vercel.app" // Vercel frontend
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+  })
+);
 app.use(express.json());
 
 console.log('🚀 Starting Edvora Server...');
